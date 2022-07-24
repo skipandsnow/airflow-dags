@@ -35,6 +35,9 @@ with DAG(
     start_date=datetime(2021, 1, 1),
     catchup=False,
     tags=['example'],
+    access_control={
+        'normal_user':{'can_dag_read', 'can_dag_edit'}
+    }
 ) as dag:
 
     # t1, t2 and t3 are examples of tasks created by instantiating operators
